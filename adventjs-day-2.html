@@ -6,6 +6,35 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+
+        function manufacture(gifts, materials){
+          const posibleGifts=[]
+            
+            gifts.forEach(element => {
+                let regalo=true
+                for (let letra = 0; letra < element.length; letra++) {
+                    if (!materials.includes(element[letra])) {
+                        regalo=false                  
+                    }                    
+                }
+                if(regalo){
+                    posibleGifts.push(element)
+                }
+            }); 
+
+            console.log(posibleGifts);
+        }
+
+
+        const gifts = ['tren', 'oso', 'pelota']
+        const materials = 'tronesa'
+
+        manufacture(gifts, materials) // ["tren", "oso"]
+        // 'tren' SÍ porque sus letras están en 'tronesa'
+        // 'oso' SÍ porque sus letras están en 'tronesa'
+        // 'pelota' NO porque sus letras NO están en 'tronesa'
+
+    </script>
 </body>
 </html>
